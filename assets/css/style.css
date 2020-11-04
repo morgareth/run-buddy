@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* apply gneral section styles */
+/* apply general section styles */
 section {
     padding: 60px;
 }
@@ -27,18 +27,6 @@ section {
 .secondary-border {
     border-color: #39a6b2;
 }
-
-/* .text-left {
-    text-align: left;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.flex-row {
-    display: flex;
-} */
 
 /* apply styles to <body> */
 body {
@@ -246,9 +234,6 @@ footer a {
 /* end style to what you do section */
 
 /* apply style to meet the trainers section */
-/* .trainers {
-
-} */
 .trainers {
     width: 100%;
     margin: 0 auto;
@@ -358,6 +343,13 @@ footer a {
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
+    /* apply media general section styles */
+    .section-title {
+        width: 80%;
+    }
+    /* end media general section styles */
+
+    /* apply media styles to <header> */
     header {
         padding-bottom: 0;
         justify-content: center;
@@ -377,12 +369,16 @@ footer a {
     header nav ul li a {
         font-size: 20px;
     }
+    /* end media styles to <header> */
 
+    /* apply styles to <footer> */
     footer h2, footer div {
         text-align: center;
         width: 100%;
     }
+    /* end media styles to <footer> */
 
+    /* apply media styles to hero section */
     .hero-cta, .hero-form {
         width: 100%;
     }
@@ -390,14 +386,91 @@ footer a {
     .hero-cta {
         text-align: center;
     }
+    /* end media styles to hero section */
+
+    /* apply media style to meet the trainers section */
+    .trainer {
+        flex: 0 70%;
+    }
+    /* end media style to meet the trainers section */
+
+    /* apply media style to reach out section */
+    .contact-info iframe {
+        flex: 1 100%;
+    }
+    /* end media style to reach out section */
 }
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 768px) {
-    
+    /* apply general media style to sections */
+    section {
+        padding: 30px 15px;
+    }
+    /* end general media style to sections
+
+    /* apply media sytle to what you do section */
+    .step h3 {
+        flex: 1 100%;
+        text-align: center;
+    }
+
+    .step-info {
+        flex: 2 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .step-img {
+        flex: 0 32%;
+        margin-top: 15px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .step-text {
+        flex: 100%;
+    }
+    /* end media sytle to what you do section */
 }
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
+    /* apply media general section styles */
+    .section-title {
+        width: 95%;
+    }
+    /* end media general section styles */
     
+    /* apply media styles to hero section */
+    .hero-form button {
+        width: 100%;
+    }
+    /* end media styles to hero section */
+
+    /* apply media sytle to what we do section */
+    .intro p {
+        width: 100%;
+    }
+    /* end media sytle to what we do section */
+
+    /* apply media sytle to meet the trainers section */
+    .trainer {
+        flex: 0 100%;
+    }
+    /* end media sytle to meet the trainers section */
+
+    /* apply media sytle to contact section */
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-info > * {
+        flex: 0 100%;
+    }
+
+    .contact-form {
+        order: 3;
+    }
+    /* end media sytle to contact section */
 }
