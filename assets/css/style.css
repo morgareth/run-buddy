@@ -273,6 +273,19 @@ footer a {
 }
 /* end style to meet the trainers section */
 
+/* apply style to service grid section */
+.service-grid-container {
+    display: grid;
+}
+
+.service-grid-item {
+    width: 200px;
+    height: 50px;
+    background-color: orange;
+    border: solid black;
+}
+/* end style to service grid section */
+
 /* apply style to reach out section */
 .contact {
     background-color: #024e76;
