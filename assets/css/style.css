@@ -33,16 +33,23 @@ body {
     color: #39a6b2;
     font-family: Helvetica, Arial, sans-serif;
 }
-
 /* end styles to <body> */
 
 /* apply styles to <header> */
 header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 20px 35px;
     background-color: #39a6b2;
+    background-image: url("../images/flipped-hero-image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
 }
 
 header h1 {
@@ -50,6 +57,7 @@ header h1 {
     font-size: 36px;
     color: #fce138;
     margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 header a {
@@ -73,8 +81,15 @@ header nav ul li a {
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
+}
 /* end styles to <header> */
 
 /* apply styles to <footer> */
@@ -101,7 +116,6 @@ footer div {
 footer a {
     color: #024e76;
 }
-
 /* end styles to <footer> */
 
 /* apply style to hero section */
@@ -128,15 +142,18 @@ footer a {
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-form {
     border: solid 3px #024e76;
-    background-color: #fce138;
+    background-color: rgba(252, 225, 56, 0.8);
     padding: 20px;
     color: #024e76;
     width: 40%;
     margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
 }
 
 .hero-form h3 {
@@ -158,6 +175,10 @@ footer a {
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 15px;
+}
+.hero-form button:hover {
+    background-color: #39a6b2;  
 }
 
 .form-input {
@@ -168,8 +189,13 @@ footer a {
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.75);
 }
-
+.form-input:focus {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
+}
 /* end style to hero section */
 
 /* apply style to what we do section */
@@ -181,19 +207,18 @@ footer a {
     margin: 0 auto;
     text-align: center;
 }
-
 /* end style to what we do section */
 
 /* apply style to what you do section */
 .steps {
     background: #fce138;
+    text-align: center;
 }
 
 .step {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -211,6 +236,7 @@ footer a {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    text-align: left;
 }
 
 .step-img {
@@ -237,6 +263,14 @@ footer a {
     font-size: 18px;
 }
 
+.step:not(:last-child) {
+    border-bottom: 1px solid #39a6b2;
+}
+
+.step:last-child {
+    padding: 0;
+    margin-bottom: 0;
+}
 /* end style to what you do section */
 
 /* apply style to meet the trainers section */
@@ -277,7 +311,6 @@ footer a {
 .trainer-bio p {
     font-size: 17px;
 }
-
 /* end style to meet the trainers section */
 
 /* apply style to service grid section */
@@ -333,7 +366,6 @@ footer a {
     font-size: 1.5rem;
     font-weight: bold;
 }
-
 /* end style to service grid section */
 
 /* apply style to reach out section */
@@ -391,6 +423,13 @@ footer a {
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
 }
 
 .contact-form button {
@@ -401,8 +440,12 @@ footer a {
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 15px;
 }
-
+.contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
+}
 /* end style to reach out section */
 
 /* MEDIA QUERIES */
@@ -414,11 +457,11 @@ footer a {
     .section-title {
         width: 80%;
     }
-
     /* end media general section styles */
 
     /* apply media styles to <header> */
     header {
+        position: relative;
         padding-bottom: 0;
         justify-content: center;
     }
@@ -437,7 +480,6 @@ footer a {
     header nav ul li a {
         font-size: 20px;
     }
-
     /* end media styles to <header> */
 
     /* apply styles to <footer> */
@@ -446,7 +488,6 @@ footer a {
         text-align: center;
         width: 100%;
     }
-
     /* end media styles to <footer> */
 
     /* apply media styles to hero section */
@@ -472,7 +513,6 @@ footer a {
     .contact-info iframe {
         flex: 1 100%;
     }
-
     /* end media style to reach out section */
 }
 
@@ -483,7 +523,6 @@ footer a {
     section {
         padding: 30px 15px;
     }
-
     /* end general media style to sections
 
     /* apply media sytle to what you do section */
@@ -508,7 +547,6 @@ footer a {
     .step-text {
         flex: 100%;
     }
-
     /* end media sytle to what you do section */
 
     /* apply media style to service price */
@@ -540,28 +578,24 @@ footer a {
     .section-title {
         width: 95%;
     }
-
     /* end media general section styles */
 
     /* apply media styles to hero section */
     .hero-form button {
         width: 100%;
     }
-
     /* end media styles to hero section */
 
     /* apply media sytle to what we do section */
     .intro p {
         width: 100%;
     }
-
     /* end media sytle to what we do section */
 
     /* apply media sytle to meet the trainers section */
     .trainer {
         flex: 0 100%;
     }
-
     /* end media sytle to meet the trainers section */
 
     /* apply media sytle to contact section */
@@ -576,6 +610,5 @@ footer a {
     .contact-form {
         order: 3;
     }
-
     /* end media sytle to contact section */
 }
