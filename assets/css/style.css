@@ -33,6 +33,7 @@ body {
     color: #39a6b2;
     font-family: Helvetica, Arial, sans-serif;
 }
+
 /* end styles to <body> */
 
 /* apply styles to <header> */
@@ -73,6 +74,7 @@ header nav ul li a {
     font-weight: lighter;
     font-size: 1.55vw;
 }
+
 /* end styles to <header> */
 
 /* apply styles to <footer> */
@@ -99,6 +101,7 @@ footer div {
 footer a {
     color: #024e76;
 }
+
 /* end styles to <footer> */
 
 /* apply style to hero section */
@@ -165,7 +168,8 @@ footer a {
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
-  }
+}
+
 /* end style to hero section */
 
 /* apply style to what we do section */
@@ -177,6 +181,7 @@ footer a {
     margin: 0 auto;
     text-align: center;
 }
+
 /* end style to what we do section */
 
 /* apply style to what you do section */
@@ -231,6 +236,7 @@ footer a {
     color: #39a6b2;
     font-size: 18px;
 }
+
 /* end style to what you do section */
 
 /* apply style to meet the trainers section */
@@ -271,38 +277,59 @@ footer a {
 .trainer-bio p {
     font-size: 17px;
 }
+
 /* end style to meet the trainers section */
 
 /* apply style to service grid section */
+.services {
+    background-color: #fce138;
+}
+
+.service-grid-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 .service-grid-container {
-    max-width: 940px;
-    margin: 0 auto;
+    background: lightyellow;
+    width: 80%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 100px);
-    grid-gap: 10px;
+    /* repeat(iterator, size) */
+    grid-template-columns: 1fr repeat(2, 4fr);
+    grid-template-rows: repeat(5, 1fr) 2fr;
+    border: 2px solid #024e76;
+    color: #024e76;
+    font-size: 1.2rem;
 }
 
 .service-grid-item {
-    background-color: orange;
-    border: solid;
-    padding: 1em;
-    color: black;
+    padding: 15px 0;
+    border: 2px solid #024e76;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.box1 {
-    grid-column: 1/2;
-    grid-row: 1/3;
+.service-grid-item.basic {
+    grid-column: 2 / span 1;
 }
 
-.box2 {
-    grid-column: 3/4;
-    grid-row: 1/4;
+.service-grid-item.both {
+    grid-column: 2 / span 2;
 }
 
-.box3 {
-    grid-column: 2/ span 2;
-    grid-row: 3/ span 1;
+.service-grid-item.cancel {
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+    grid-column: 1;
+    grid-row: 1 / -1;
+}
+
+.grid-head, .grid-price, .cancel {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 /* end style to service grid section */
 
@@ -321,7 +348,7 @@ footer a {
     flex-wrap: wrap;
 }
 
-.contact-info > * {
+.contact-info>* {
     flex: 1;
     margin: 15px;
 }
@@ -339,7 +366,8 @@ footer a {
     font-size: 32px;
 }
 
-.contact-info p, .contact-info address {
+.contact-info p,
+.contact-info address {
     margin: 20px 0;
     line-height: 1.5;
     font-size: 16px;
@@ -350,7 +378,8 @@ footer a {
     color: #fce138;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     border: 1px solid #024e76;
     display: block;
     padding: 7px 15px;
@@ -370,16 +399,19 @@ footer a {
     padding: 15px 0;
     font-size: 16px;
 }
+
 /* end style to reach out section */
 
 /* MEDIA QUERIES */
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
+
     /* apply media general section styles */
     .section-title {
         width: 80%;
     }
+
     /* end media general section styles */
 
     /* apply media styles to <header> */
@@ -402,44 +434,53 @@ footer a {
     header nav ul li a {
         font-size: 20px;
     }
+
     /* end media styles to <header> */
 
     /* apply styles to <footer> */
-    footer h2, footer div {
+    footer h2,
+    footer div {
         text-align: center;
         width: 100%;
     }
+
     /* end media styles to <footer> */
 
     /* apply media styles to hero section */
-    .hero-cta, .hero-form {
+    .hero-cta,
+    .hero-form {
         width: 100%;
     }
 
     .hero-cta {
         text-align: center;
     }
+
     /* end media styles to hero section */
 
     /* apply media style to meet the trainers section */
     .trainer {
         flex: 0 70%;
     }
+
     /* end media style to meet the trainers section */
 
     /* apply media style to reach out section */
     .contact-info iframe {
         flex: 1 100%;
     }
+
     /* end media style to reach out section */
 }
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 768px) {
+
     /* apply general media style to sections */
     section {
         padding: 30px 15px;
     }
+
     /* end general media style to sections
 
     /* apply media sytle to what you do section */
@@ -464,33 +505,39 @@ footer a {
     .step-text {
         flex: 100%;
     }
+
     /* end media sytle to what you do section */
 }
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
+
     /* apply media general section styles */
     .section-title {
         width: 95%;
     }
+
     /* end media general section styles */
-    
+
     /* apply media styles to hero section */
     .hero-form button {
         width: 100%;
     }
+
     /* end media styles to hero section */
 
     /* apply media sytle to what we do section */
     .intro p {
         width: 100%;
     }
+
     /* end media sytle to what we do section */
 
     /* apply media sytle to meet the trainers section */
     .trainer {
         flex: 0 100%;
     }
+
     /* end media sytle to meet the trainers section */
 
     /* apply media sytle to contact section */
@@ -498,12 +545,13 @@ footer a {
         text-align: center;
     }
 
-    .contact-info > * {
+    .contact-info>* {
         flex: 0 100%;
     }
 
     .contact-form {
         order: 3;
     }
+
     /* end media sytle to contact section */
 }
